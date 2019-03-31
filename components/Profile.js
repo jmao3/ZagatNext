@@ -2,7 +2,7 @@ import Link from "next/link";
 import ButtonOutline from "./ButtonOutline";
 
 const Profile = props => (
-  <div className="d-flex align-items-center">
+  <div className="d-flex align-items-center mb-2">
     <div>
       <Link href="profile">
         <img className="rounded-circle" src={props.url} alt={props.name} />
