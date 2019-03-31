@@ -26,7 +26,6 @@ const AllRecipes = ({ data: { loading, error, tests } }) => {
             }
         </Layout>
     )
-    return null;
 }
 
 const allRecipes = gql`
