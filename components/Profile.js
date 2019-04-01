@@ -5,7 +5,7 @@ const Profile = props => (
   <div className="d-flex align-items-center mb-2">
     <div>
       <Link href="profile">
-        <img className="rounded-circle" src={props.url} alt={props.name} />
+        <img className="rounded-circle" src={props.imgurl} alt={props.name} />
       </Link>
     </div>
     <div className="mx-2">

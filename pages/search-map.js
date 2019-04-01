@@ -11,7 +11,7 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
   if (error) return <h1>Error loading reviews.</h1>;
   return (
     <Layout>
-      <SubNav active="post" />
+      <SubNav active="map" />
       {loading ? (
         <div>Loading</div>
       ) : (
@@ -29,6 +29,7 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
               </Link>
             </TextCard>
           ))}
+          <img src="../static/map.png" />
         </div>
       )}
       <style jsx>

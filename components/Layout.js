@@ -13,9 +13,7 @@ const Layout = props => (
       />
     </Head>
     <Navbar />
-    <main>
-      <div className="container">{props.children}</div>
-    </main>
+    <main>{props.children}</main>
 
     <style jsx global>{`
       * {
@@ -23,7 +21,7 @@ const Layout = props => (
       }
       main {
         background-color: #f1f1f2;
-        padding: 20px;
+        padding-top: 80px;
       }
       a:hover {
         color: #b70038 !important;
