@@ -7,7 +7,7 @@ import TextCard from "../components/Card";
 import Profile from "../components/Profile";
 import { Link } from "../routes";
 
-const AllQuestions = ({ data: { loading, error, questions } }) => {
+const AllThreads = ({ data: { loading, error, threads } }) => {
   if (error) return <h1>Error loading reviews.</h1>;
   return (
     <Layout>
@@ -15,27 +15,27 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
       {loading ? (
         <div>Loading</div>
       ) : (
-          <div className="container">
-            {questions.map((question, index) => (
-              <TextCard key={index}>
-                <Link route="question-details" params={{ id: question.id }}>
-                  <a>
-                    <h2>{question.question}</h2>
-                  </a>
-                </Link>
-                <Profile
-                  name={question.answers[0].profile.name}
-                  imgurl={`https://media.graphcms.com/resize=w:100,h:100/${
-                    question.answers[0].profile.image.handle
-                    }`}
-                />
-                <Link route="question-details" params={{ id: question.id }}>
-                  <p>{question.answers[0].content}</p>
-                </Link>
-              </TextCard>
-            ))}
-          </div>
-        )}
+        <div className="container">
+          {threads.map((thread, index) => (
+            <TextCard key={index}>
+              <Link route="thread-details" params={{ id: thread.id }}>
+                <a>
+                  <h2>{thread.question}</h2>
+                </a>
+              </Link>
+              <Profile
+                name={thread.answers[0].profile.name}
+                imgurl={`https://media.graphcms.com/resize=w:100,h:100/${
+                  thread.answers[0].profile.image.handle
+                }`}
+              />
+              <Link route="thread-details" params={{ id: thread.id }}>
+                <p>{thread.answers[0].content}</p>
+              </Link>
+            </TextCard>
+          ))}
+        </div>
+      )}
       <style jsx>
         {`
           .container {
@@ -50,9 +50,9 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
   );
 };
 
-const allQuestions = gql`
-  query allQuestions {
-    questions {
+const allThreads = gql`
+  query allThreads {
+    threads {
       id
       question
       answers {
@@ -69,4 +69,4 @@ const allQuestions = gql`
     }
   }
 `;
-export default withData(graphql(allQuestions)(AllQuestions));
+export default withData(graphql(allThreads)(AllThreads));
