@@ -43,7 +43,7 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
 };
 
 const allQuestions = gql`
-  query AllQuestions {
+  query allQuestions {
     questions {
       id
       question

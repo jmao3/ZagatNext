@@ -43,6 +43,9 @@ const Layout = props => (
       h5 {
         font-size: 15px !important;
       }
+      p {
+        font-size: 15px !important;
+      }
       .subscript {
         color: #656666;
       }
