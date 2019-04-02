@@ -15,26 +15,34 @@ const AllQuestions = ({ data: { loading, error, questions } }) => {
       {loading ? (
         <div>Loading</div>
       ) : (
-        <div className="container">
-          {questions.map((question, index) => (
-            <TextCard key={index} question={question.question}>
-              <Profile
-                name={question.answers[0].profile.name}
-                imgurl={`https://media.graphcms.com/resize=w:100,h:100/${
-                  question.answers[0].profile.image.handle
-                }`}
-              />
-              <Link route="question-details" params={{ id: question.id }}>
-                <p>{question.answers[0].content}</p>
-              </Link>
-            </TextCard>
-          ))}
-        </div>
-      )}
+          <div className="container">
+            {questions.map((question, index) => (
+              <TextCard key={index}>
+                <Link route="question-details" params={{ id: question.id }}>
+                  <a>
+                    <h2>{question.question}</h2>
+                  </a>
+                </Link>
+                <Profile
+                  name={question.answers[0].profile.name}
+                  imgurl={`https://media.graphcms.com/resize=w:100,h:100/${
+                    question.answers[0].profile.image.handle
+                    }`}
+                />
+                <Link route="question-details" params={{ id: question.id }}>
+                  <p>{question.answers[0].content}</p>
+                </Link>
+              </TextCard>
+            ))}
+          </div>
+        )}
       <style jsx>
         {`
           .container {
             padding-top: 60px;
+          }
+          a {
+            color: black;
           }
         `}
       </style>
