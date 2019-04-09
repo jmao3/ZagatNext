@@ -44,10 +44,25 @@ const Layout = props => (
         font-size: 15px !important;
       }
       p {
-        font-size: 15px !important;
+        font-size: 20px;
       }
       .subscript {
         color: #656666;
+      }
+      .box {
+        background: white;
+        margin: 20px 0;
+      }
+      .box-padding {
+        padding: 40px;
+      }
+      .btn-outline-primary {
+        color: #b70038 !important;
+        border-color: #b70038 !important;
+      }
+      .btn-outline-primary:hover {
+        background-color: #b70038 !important;
+        color: white !important;
       }
     `}</style>
   </div>

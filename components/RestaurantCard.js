@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const RestaurantCard = props => (
   <div className="d-flex flex-row restaurant-card">
-    <img src={props.imgurl} alt="HIHO CHEESEBURGER" />
+    <img src={props.imgurl} alt={props.name} />
     <div className="p-3">
       <h4 className="mb-1 name">{props.name}</h4>
       <h5 className="subscript mb-1">{props.category}</h5>
@@ -31,6 +31,9 @@ const RestaurantCard = props => (
         .description {
           overflow: hidden;
           height: 40px;
+        }
+        p {
+          font-size: 15px;
         }
       `}
     </style>

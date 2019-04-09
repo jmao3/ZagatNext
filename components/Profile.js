@@ -1,10 +1,14 @@
-import Link from "next/link";
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
+import Layout from "../components/Layout";
+import withData from "../lib/withData";
+import { Link } from "../routes";
 import ButtonOutline from "./ButtonOutline";
 
 const Profile = props => (
   <div className="d-flex align-items-center mb-2">
     <div>
-      <Link href="profile">
+      <Link route="profile" params={{ id: props.id }}>
         <img className="rounded-circle" src={props.imgurl} alt={props.name} />
       </Link>
     </div>
