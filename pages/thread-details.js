@@ -1,10 +1,7 @@
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import withData from "../lib/withData";
 import Layout from "../components/Layout";
-import Category from "../components/Category";
-import Profile from "../components/Profile";
-import RestaurntCard from "../components/RestaurantCard";
+import withData from "../lib/withData";
 
 const Thread = ({ data: { loading, error, thread } }) => {
   // if (error) return <h1>Error loading reviews.</h1>;
@@ -13,6 +10,7 @@ const Thread = ({ data: { loading, error, thread } }) => {
       {loading ? (
         <div>Loading</div>
       ) : (
+<<<<<<< HEAD
           <div className="row m-4">
             <div className="col-8">
               <div className="box box-padding">
@@ -52,6 +50,16 @@ const Thread = ({ data: { loading, error, thread } }) => {
             </div>
           </div>
         )}
+=======
+        <div>
+          <h1>{thread.question}</h1>
+
+          {thread.answers.map(answer => (
+            <div>{answer.content}</div>
+          ))}
+        </div>
+      )}
+>>>>>>> parent of af25663... more
     </Layout>
   );
 };
@@ -61,27 +69,9 @@ const threadDetails = gql`
     thread(where: { id: $id }) {
       id
       question
-      categories {
-        name
-      }
       answers {
         id
         content
-        images {
-          handle
-        }
-        restaurants {
-          name
-          images {
-            handle
-          }
-        }
-        profile {
-          name
-          image {
-            handle
-          }
-        }
       }
     }
   }

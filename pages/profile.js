@@ -1,16 +1,6 @@
-import { graphql } from "react-apollo";
-import gql from "graphql-tag";
 import Layout from "../components/Layout";
-import ButtonOutline from "../components/ButtonOutline";
-import withData from "../lib/withData";
-import { Link } from "../routes";
 
-const NavLink = props => (
-  <Link href="">
-    <a>{props.children}</a>
-  </Link>
-);
-
+<<<<<<< HEAD
 const ProfileDetails = ({ data: { loading, error, profile } }) => {
   return (
     <Layout>
@@ -86,6 +76,13 @@ const profileDetails = gql`
       }
     }
   `;
+=======
+const profile = () => (
+  <Layout>
+    <div>lorem ipsum</div>;
+  </Layout>
+);
+>>>>>>> parent of af25663... more
 
 export default withData(
   graphql(profileDetails, {

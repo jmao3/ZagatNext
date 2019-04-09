@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 import { Link } from "../routes";
+=======
+import Link from "next/link";
+>>>>>>> parent of af25663... more
 import ButtonOutline from "./ButtonOutline";
 
 const Profile = props => (
   <div className="d-flex align-items-center mb-2">
     <div>
-      <Link route="profile" params={{ id: props.id }}>
+      <Link href="profile">
         <img className="rounded-circle" src={props.imgurl} alt={props.name} />
       </Link>
     </div>
