@@ -39,6 +39,7 @@ const AllThreads = ({ data: { loading, error, threads } }) => {
                       imgurl={`https://media.graphcms.com/resize=w:100,h:100/${
                         thread.answers[0].profile.image.handle
                       }`}
+                      id={thread.answers[0].profile.id}
                     />
                     <Link route="thread-details" params={{ id: thread.id }}>
                       <p>{thread.answers[0].content}</p>

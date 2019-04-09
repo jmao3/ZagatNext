@@ -1,7 +1,3 @@
-import { graphql } from "react-apollo";
-import gql from "graphql-tag";
-import Layout from "../components/Layout";
-import withData from "../lib/withData";
 import { Link } from "../routes";
 import ButtonOutline from "./ButtonOutline";
 
@@ -14,7 +10,7 @@ const Profile = props => (
     </div>
     <div className="mx-2">
       <div className="d-flex align-items-baseline">
-        <Link href="profile">
+        <Link route="profile" params={{ id: props.id }}>
           <a>
             <h3>{props.name}</h3>
           </a>
