@@ -18,7 +18,7 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "express": "^4.15.3",
-    "next": "^8",
+    "next": "^13",
     "next-routes": "^1.4.2",
     "react": "^16.8.4",
     "react-apollo": "^2.5.2",
